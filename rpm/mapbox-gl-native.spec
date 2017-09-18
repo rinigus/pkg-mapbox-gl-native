@@ -47,7 +47,6 @@ cp ../mapbox-gl-native-lib.pro .
 %pre
 
 %files
-%files
 %defattr(-, root, root, 0755)
 %{_libdir}/libqmapboxgl.a
 %{_includedir}/qt5/mbgl
