@@ -88,6 +88,7 @@ SOURCES += \
     platform/qt/src/utf.cpp \
     src/csscolorparser/csscolorparser.cpp \
     src/mbgl/actor/mailbox.cpp \
+    src/mbgl/actor/scheduler.cpp \
     src/mbgl/algorithm/generate_clip_ids.cpp \
     src/mbgl/annotation/annotation_manager.cpp \
     src/mbgl/annotation/annotation_source.cpp \
@@ -294,16 +295,16 @@ SOURCES += \
     src/mbgl/util/version.cpp \
     src/mbgl/util/work_request.cpp \
     src/parsedate/parsedate.c \
-        platform/default/asset_file_source.cpp \
-        platform/default/default_file_source.cpp \
-        platform/default/local_file_source.cpp \
-        platform/default/online_file_source.cpp \
-        platform/default/mbgl/storage/offline.cpp \
-        platform/default/mbgl/storage/offline_database.cpp \
-        platform/default/mbgl/storage/offline_download.cpp \
-        platform/default/logging_stderr.cpp \
-        platform/default/mbgl/util/shared_thread_pool.cpp \
-        platform/default/mbgl/util/default_thread_pool.cpp
+	platform/default/asset_file_source.cpp \
+	platform/default/default_file_source.cpp \
+	platform/default/local_file_source.cpp \
+	platform/default/online_file_source.cpp \
+	platform/default/mbgl/storage/offline.cpp \
+	platform/default/mbgl/storage/offline_database.cpp \
+	platform/default/mbgl/storage/offline_download.cpp \
+	platform/default/logging_stderr.cpp \
+	platform/default/mbgl/util/shared_thread_pool.cpp \
+	platform/default/mbgl/util/default_thread_pool.cpp
 
 HEADERS += \
     platform/qt/include/qmapbox.hpp \
