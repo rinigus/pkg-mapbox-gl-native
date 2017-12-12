@@ -1,12 +1,14 @@
 TARGET = qmapboxgl
 TEMPLATE = lib
 
-CONFIG += qt c++14 exceptions warn_off
-CONFIG += staticlib
+CONFIG += qt c++14 exceptions warn_off staticlib object_parallel_to_source
 CONFIG += use_opengles2 use_system-zlib
 
-QT += network \
-      gui \
+# QT += network \
+#       gui \
+#       sql
+
+QT += gui \
       sql
 
 # QMAKE_CXX=/opt/gcc6/bin/g++
@@ -74,8 +76,8 @@ use_icu {
 
 SOURCES += \
     platform/qt/src/async_task.cpp \
-    platform/qt/src/http_file_source.cpp \
-    platform/qt/src/http_request.cpp \
+\ #    platform/qt/src/http_file_source.cpp \
+\ #    platform/qt/src/http_request.cpp \
     platform/qt/src/qmapbox.cpp \
     platform/qt/src/qmapboxgl.cpp \
     platform/qt/src/qmapboxgl_renderer_frontend_p.cpp \
@@ -295,23 +297,24 @@ SOURCES += \
     src/mbgl/util/version.cpp \
     src/mbgl/util/work_request.cpp \
     src/parsedate/parsedate.c \
-	platform/default/asset_file_source.cpp \
-	platform/default/default_file_source.cpp \
-	platform/default/local_file_source.cpp \
-	platform/default/online_file_source.cpp \
-	platform/default/mbgl/storage/offline.cpp \
-	platform/default/mbgl/storage/offline_database.cpp \
-	platform/default/mbgl/storage/offline_download.cpp \
-	platform/default/logging_stderr.cpp \
-	platform/default/mbgl/util/shared_thread_pool.cpp \
-	platform/default/mbgl/util/default_thread_pool.cpp
+    platform/default/asset_file_source.cpp \
+    platform/default/default_file_source.cpp \
+    platform/default/local_file_source.cpp \
+    platform/default/online_file_source.cpp \
+    platform/default/mbgl/storage/offline.cpp \
+    platform/default/mbgl/storage/offline_database.cpp \
+    platform/default/mbgl/storage/offline_download.cpp \
+    platform/default/logging_stderr.cpp \
+    platform/default/mbgl/util/shared_thread_pool.cpp \
+    platform/default/mbgl/util/default_thread_pool.cpp \
+    platform/default/http_file_source.cpp
 
 HEADERS += \
     platform/qt/include/qmapbox.hpp \
     platform/qt/include/qmapboxgl.hpp \
     platform/qt/src/async_task_impl.hpp \
-    platform/qt/src/http_file_source.hpp \
-    platform/qt/src/http_request.hpp \
+\#    platform/qt/src/http_file_source.hpp \
+\#    platform/qt/src/http_request.hpp \
     platform/qt/src/qmapboxgl_p.hpp \
     platform/qt/src/qmapboxgl_renderer_frontend_p.hpp \
     platform/qt/src/qt_conversion.hpp \
