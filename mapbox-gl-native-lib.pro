@@ -55,7 +55,8 @@ win32:qtConfig(dynamicgl) {
 }
 
 use_system-zlib {
-    QMAKE_USE_PRIVATE += zlib
+  #QMAKE_USE_PRIVATE += zlib
+   PKGCONFIG += zlib
 } else {
     QT_PRIVATE += zlib-private
 }
