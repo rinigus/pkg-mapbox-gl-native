@@ -18,7 +18,7 @@ BuildRequires:  pkgconfig(Qt5Network)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(libcurl)
-
+BuildRequires:  libicu52-devel
 
 #Requires: proj
 
