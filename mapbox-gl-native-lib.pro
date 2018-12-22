@@ -2,7 +2,7 @@ TARGET = qmapboxgl
 TEMPLATE = lib
 
 CONFIG += qt c++14 exceptions warn_off staticlib object_parallel_to_source
-CONFIG += use_system-zlib
+CONFIG += use_system-zlib use_icu
 
 # QT += network \
 #       gui \
