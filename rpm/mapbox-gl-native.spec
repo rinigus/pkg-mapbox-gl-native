@@ -1,7 +1,7 @@
 Summary: Mapbox GL Native Qt version
 Name: qmapboxgl
 Version: 1.5.0
-Release: 2%{?dist}
+Release: 3%{?dist}
 License: Open Source
 Group: Libraries/Geosciences
 URL: https://github.com/mapbox/mapbox-gl-native
@@ -18,11 +18,7 @@ BuildRequires:  pkgconfig(Qt5Network)
 BuildRequires:  pkgconfig(sqlite3)
 BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(libcurl)
-%if "%{_repository}" == "sailfish_3.0.2.8_armv7hl"
-BuildRequires: libicu52-devel
-%else
-BuildRequires: libicu-devel
-%endif
+BuildRequires:  pkgconfig(icu-uc)
 
 #Requires: proj
 
