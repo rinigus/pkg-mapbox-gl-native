@@ -1,19 +1,12 @@
 TARGET = qmapboxgl
 TEMPLATE = lib
 
-CONFIG += qt c++14 exceptions warn_off staticlib object_parallel_to_source
+CONFIG += qt c++14 exceptions warn_off object_parallel_to_source
 CONFIG += use_system-zlib use_icu
 
-# QT += network \
-#       gui \
-#       sql
-
-QT += gui \
+QT += network \
+      gui \
       sql
-
-# QMAKE_CXX=/opt/gcc6/bin/g++
-# QMAKE_CC=/opt/gcc6/bin/gcc
-# QMAKE_LINK=/opt/gcc6/bin/g++
 
 QMAKE_CXXFLAGS += \
     -DNDEBUG \
@@ -72,8 +65,8 @@ use_icu {
 
 SOURCES += \
     platform/qt/src/async_task.cpp \
-\ #    platform/qt/src/http_file_source.cpp \
-\ #    platform/qt/src/http_request.cpp \
+    platform/qt/src/http_file_source.cpp \
+    platform/qt/src/http_request.cpp \
     platform/qt/src/qmapbox.cpp \
     platform/qt/src/qmapboxgl.cpp \
     platform/qt/src/qmapboxgl_map_observer.cpp \
@@ -390,15 +383,14 @@ SOURCES += \
     vendor/nunicode/src/libnu/tolower.c \
     vendor/nunicode/src/libnu/tounaccent.c \
     vendor/nunicode/src/libnu/toupper.c \
-    vendor/nunicode/src/libnu/utf8.c \
-    platform/default/http_file_source.cpp
+    vendor/nunicode/src/libnu/utf8.c
 
 HEADERS += \
     platform/qt/include/qmapbox.hpp \
     platform/qt/include/qmapboxgl.hpp \
     platform/qt/src/async_task_impl.hpp \
-\#    platform/qt/src/http_file_source.hpp \
-\#    platform/qt/src/http_request.hpp \
+    platform/qt/src/http_file_source.hpp \
+    platform/qt/src/http_request.hpp \
     platform/qt/src/qmapboxgl_map_observer.hpp \
     platform/qt/src/qmapboxgl_map_renderer.hpp \
     platform/qt/src/qmapboxgl_p.hpp \
