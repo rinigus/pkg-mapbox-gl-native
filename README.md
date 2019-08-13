@@ -7,6 +7,9 @@ as a library on desktop systems.
 For Sailfish, see OBS for example use. For Linux dekstop, instructions
 are below.
 
+This branch uses regular Qt HTTP client, as opposed to `sfos` branch
+which is based on curl.
+
 ## Requirements
 
 This package requires C++14 compiler, see Mapbox GL Native
