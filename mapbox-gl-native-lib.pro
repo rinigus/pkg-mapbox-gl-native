@@ -20,7 +20,7 @@ QMAKE_CXXFLAGS += \
     -fvisibility-inlines-hidden \
     -fvisibility=hidden
 
-android|win32|darwin|qnx {
+android|win32|darwin|qnx|posix {
     SOURCES += \
         platform/qt/src/thread.cpp
 } else {
