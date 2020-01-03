@@ -10,7 +10,7 @@ Source: %{name}-%{version}.tar.gz
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires: opt-gcc6 gcc-c++
+BuildRequires: opt-gcc gcc-c++
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Sql)
@@ -38,7 +38,7 @@ cp ../mapbox-gl-native-lib.pro .
     VERSION='%{version}-%{release}'
 
 
-%{__make} CXX=/opt/gcc6/bin/g++ CC=/opt/gcc6/bin/gcc LINK=/opt/gcc6/bin/g++ %{?_smp_mflags}
+%{__make} CXX=/opt/gcc/bin/g++ CC=/opt/gcc/bin/gcc LINK=/opt/gcc/bin/g++ %{?_smp_mflags}
 
 %install
 %{__rm} -rf %{buildroot}
