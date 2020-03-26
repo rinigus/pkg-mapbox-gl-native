@@ -1,3 +1,4 @@
 [submodule "mapbox-gl-native"]
 	path = mapbox-gl-native
 	url = https://github.com/rinigus/mapbox-gl-native.git
+	branch = qml-map-overdraw-fix
