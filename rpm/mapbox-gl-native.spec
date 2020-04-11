@@ -10,7 +10,7 @@ Source: %{name}-%{version}.tar.gz
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
-BuildRequires: opt-gcc gcc-c++
+BuildRequires:  cmake
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Sql)
@@ -32,17 +32,12 @@ counterpart, designed for use on the Web.
 %setup -q -n %{name}-%{version}/mapbox-gl-native
 
 %build
-cp ../mapbox-gl-native-lib.pro .
-
-%qmake5 mapbox-gl-native-lib.pro \
-    VERSION='%{version}-%{release}'
-
-
-%{__make} CXX=/opt/gcc/bin/g++ CC=/opt/gcc/bin/gcc LINK=/opt/gcc/bin/g++ %{?_smp_mflags}
+%cmake -DMBGL_WITH_QT=ON -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr .
+%{__make} %{?_smp_mflags}
 
 %install
 %{__rm} -rf %{buildroot}
-%qmake5_install
+mkdir -p %{buildroot}
 
 %clean
 %{__rm} -rf %{buildroot}
@@ -52,7 +47,7 @@ cp ../mapbox-gl-native-lib.pro .
 %files
 %defattr(-, root, root, 0755)
 %{_libdir}/libqmapboxgl.a
-%{_includedir}/qt5/mbgl
+%{_includedir}/mbgl
 %{_includedir}/qt5/Q*Mapbox*
 %{_includedir}/qt5/qmapbox*
 
