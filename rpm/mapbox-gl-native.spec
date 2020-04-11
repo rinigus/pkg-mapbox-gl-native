@@ -42,6 +42,7 @@ LINK=/opt/gcc/bin/g++
 %install
 %{__rm} -rf %{buildroot}
 mkdir -p %{buildroot}
+%{__make} install DESTDIR=%{buildroot}
 
 %clean
 %{__rm} -rf %{buildroot}
