@@ -32,7 +32,7 @@ counterpart, designed for use on the Web.
 %setup -q -n %{name}-%{version}/mapbox-gl-native
 
 %build
-%cmake -DMBGL_WITH_QT=ON -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr .
+%cmake -DMBGL_WITH_QT=ON -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_TEST=OFF -DMBGL_WITH_QT_DEMO=OFF .
 %{__make} %{?_smp_mflags}
 
 %install
