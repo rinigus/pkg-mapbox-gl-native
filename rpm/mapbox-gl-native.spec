@@ -36,7 +36,7 @@ counterpart, designed for use on the Web.
 CXX=/opt/gcc/bin/g++
 CC=/opt/gcc/bin/gcc
 LINK=/opt/gcc/bin/g++
-%cmake -DCMAKE_C_COMPILER=/opt/gcc/bin/gcc -DCMAKE_CXX_COMPILER=/opt/gcc/bin/g++ -DMBGL_WITH_QT=ON -DBUILD_SHARED_LIBS=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_TEST=OFF -DMBGL_WITH_QT_DEMO=OFF .
+%cmake -DCMAKE_C_COMPILER=/opt/gcc/bin/gcc -DCMAKE_CXX_COMPILER=/opt/gcc/bin/g++ -DMBGL_WITH_QT=ON -DBUILD_WARNING_AS_ERROR=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_TEST=OFF -DMBGL_WITH_QT_DEMO=OFF .
 %{__make} %{?_smp_mflags}
 
 %install
@@ -51,7 +51,7 @@ mkdir -p %{buildroot}
 
 %files
 %defattr(-, root, root, 0755)
-%{_libdir}/libqmapboxgl.a
+%{_libdir}/libqmapboxgl.*
 %{_includedir}/mbgl
 %{_includedir}/qt5/Q*Mapbox*
 %{_includedir}/qt5/qmapbox*
