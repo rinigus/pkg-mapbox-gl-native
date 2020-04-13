@@ -44,7 +44,7 @@ This package contains the development headers for %{name}.
 CXX=/opt/gcc/bin/g++
 CC=/opt/gcc/bin/gcc
 LINK=/opt/gcc/bin/g++
-LDFLAGS=-L/opt/gcc6/lib -static-libstdc++
+LDFLAGS="-L/opt/gcc6/lib -static-libstdc++"
 %cmake -DCMAKE_C_COMPILER=/opt/gcc/bin/gcc -DCMAKE_CXX_COMPILER=/opt/gcc/bin/g++ -DMBGL_WITH_QT=ON -DBUILD_WARNING_AS_ERROR=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_TEST=OFF -DMBGL_WITH_QT_DEMO=OFF .
 %{__make} %{?_smp_mflags}
 
