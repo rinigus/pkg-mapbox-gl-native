@@ -11,7 +11,7 @@ Source: %{name}-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
 
 BuildRequires:  cmake
-BuildRequires:  opt-gcc gcc-c++
+BuildRequires:  gcc-c++
 BuildRequires:  pkgconfig(Qt5Core)
 BuildRequires:  pkgconfig(Qt5Gui)
 BuildRequires:  pkgconfig(Qt5Sql)
@@ -41,10 +41,7 @@ This package contains the development headers for %{name}.
 %setup -q -n %{name}-%{version}/mapbox-gl-native
 
 %build
-CXX=/opt/gcc/bin/g++
-CC=/opt/gcc/bin/gcc
-LINK=/opt/gcc/bin/g++
-%cmake -DCMAKE_C_COMPILER=/opt/gcc/bin/gcc -DCMAKE_CXX_COMPILER=/opt/gcc/bin/g++ -DMBGL_WITH_QT=ON -DMBGL_WITH_WERROR=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_TEST=OFF -DMBGL_WITH_QT_DEMO=OFF .
+%cmake -DMBGL_WITH_QT=ON -DMBGL_WITH_WERROR=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_TEST=OFF -DMBGL_WITH_QT_DEMO=OFF .
 %{__make} %{?_smp_mflags}
 
 %install
