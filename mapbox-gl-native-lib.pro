@@ -11,10 +11,6 @@ CONFIG += use_system-zlib use_icu
 QT += gui \
       sql
 
-# QMAKE_CXX=/opt/gcc6/bin/g++
-# QMAKE_CC=/opt/gcc6/bin/gcc
-# QMAKE_LINK=/opt/gcc6/bin/g++
-
 QMAKE_CXXFLAGS += \
     -DNDEBUG \
     -DQT_IMAGE_DECODERS \
