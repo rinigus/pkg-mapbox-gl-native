@@ -50,12 +50,7 @@ This package contains the development headers for %{name}.
 %{__make} %{?_smp_mflags}
 
 %install
-%{__rm} -rf %{buildroot}
-mkdir -p %{buildroot}
 %{__make} install DESTDIR=%{buildroot}
-
-%clean
-%{__rm} -rf %{buildroot}
 
 %pre
 
