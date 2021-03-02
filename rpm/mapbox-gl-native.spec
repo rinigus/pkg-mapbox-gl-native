@@ -42,7 +42,7 @@ This package contains the development headers for %{name}.
 
 %build
 %cmake -DMBGL_WITH_QT=ON -DMBGL_WITH_WERROR=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr \
-       -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_TEST=OFF -DMBGL_WITH_QT_DEMO=OFF \
+       -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_LIB_ONLY=ON \
        %if 0%{?suse_version} >= 1500
        -DCMAKE_SHARED_LINKER_FLAGS=-pthread \
        %endif
