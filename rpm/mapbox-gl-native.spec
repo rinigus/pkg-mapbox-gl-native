@@ -41,7 +41,7 @@ This package contains the development headers for %{name}.
 %setup -q -n %{name}-%{version}/mapbox-gl-native
 
 %build
-%cmake -DMBGL_WITH_QT=ON -DMBGL_WITH_WERROR=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_TEST=OFF -DMBGL_WITH_QT_DEMO=OFF .
+%cmake -DMBGL_WITH_QT=ON -DMBGL_WITH_WERROR=OFF -DCMAKE_INSTALL_PREFIX:PATH=/usr -DMBGL_WITH_QT_HEADLESS=OFF -DMBGL_WITH_QT_LIB_ONLY=ON .
 %{__make} %{?_smp_mflags}
 
 %install
