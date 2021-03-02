@@ -62,6 +62,7 @@ This package contains the development headers for %{name}.
 %{_includedir}/mbgl
 %{_includedir}/qt5/Q*Mapbox*
 %{_includedir}/qt5/qmapbox*
+%{_libdir}/cmake/qmapboxgl
 
 %changelog
 * Sat Mar 10 2018 rinigus <rinigus.git@gmail.com> - 1.3.0-1
