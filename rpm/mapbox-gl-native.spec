@@ -21,7 +21,8 @@ BuildRequires:  pkgconfig(zlib)
 BuildRequires:  pkgconfig(libcurl)
 BuildRequires:  pkgconfig(icu-uc)
 
-#Requires: proj
+Requires(post): /sbin/ldconfig
+Requires(postun): /sbin/ldconfig
 
 %description
 A library for embedding interactive, customizable vector maps into native applications on multiple platforms.
@@ -52,16 +53,19 @@ mkdir -p %{buildroot}
 %clean
 %{__rm} -rf %{buildroot}
 
-%pre
+%post -p /sbin/ldconfig
+
+%postun -p /sbin/ldconfig
 
 %files
 %defattr(-, root, root, 0755)
-%{_libdir}/libqmapboxgl.*
+%{_libdir}/libqmapboxgl.*.so
 
 %files devel
 %{_includedir}/mbgl
 %{_includedir}/qt5/Q*Mapbox*
 %{_includedir}/qt5/qmapbox*
+%{_libdir}/libqmapboxgl.so
 %{_libdir}/cmake/qmapboxgl
 
 %changelog
