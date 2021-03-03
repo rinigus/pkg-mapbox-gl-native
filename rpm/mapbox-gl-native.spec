@@ -59,7 +59,7 @@ mkdir -p %{buildroot}
 
 %files
 %defattr(-, root, root, 0755)
-%{_libdir}/libqmapboxgl.*.so
+%{_libdir}/libqmapboxgl.so.*
 
 %files devel
 %{_includedir}/mbgl
