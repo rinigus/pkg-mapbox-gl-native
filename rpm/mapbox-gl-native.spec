@@ -30,6 +30,12 @@ It takes stylesheets that conform to the Mapbox Style Specification, applies the
 conform to the Mapbox Vector Tile Specification, and renders them using OpenGL. Mapbox GL JS is the WebGL-based
 counterpart, designed for use on the Web.
 
+PackageName: Mapbox GL Native Qt
+Categories:
+  - Library
+  - Maps
+  - Science
+
 %package devel
 Summary:        Development files for %{name}
 License:        Open Source
@@ -37,6 +43,12 @@ Requires:       %{name}%{?_isa} = %{version}-%{release}
 
 %description devel
 This package contains the development headers for %{name}.
+
+PackageName: Mapbox GL Native Qt Development
+Categories:
+  - Library
+  - Maps
+  - Science
 
 %prep
 %setup -q -n %{name}-%{version}/mapbox-gl-native
